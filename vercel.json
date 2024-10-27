@@ -9,7 +9,13 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest":"src/index.js"
+            "dest":"/"
         }
-    ]
+    ],
+    "hooks": {
+        "build": {
+            "command": "npm run build"
+        }
+
+    }
 }
