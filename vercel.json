@@ -11,5 +11,10 @@
             "src": "/(.*)",
             "dest":"src/index.js"
         }
-    ]
+    ],
+    "hooks" : {
+        "build": {
+            "command": "npm run build"
+            }
+    }
 }
