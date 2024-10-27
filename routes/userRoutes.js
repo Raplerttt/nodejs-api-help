@@ -4,7 +4,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.post('/', createUser); // Mengubah endpoint menjadi POST `/api/users`
+router.post('/daftar', createUser); // Mengubah endpoint menjadi POST `/api/users`
 router.post('/login', loginUser);
 router.get('/', authMiddleware, getAllUsers);
 

@@ -3,6 +3,7 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes'); // Jika Anda memiliki authRoutes, pastikan diimport
 const dotenv = require('dotenv');
 const errorHandler = require('./middleware/errorHandler');
+const { Pool } = require('pg');
 dotenv.config();
 
 const app = express();
@@ -21,6 +22,10 @@ app.use('/api/users', userRoutes);
 // app.use('/api/auth', authRoutes); // Jika ada rute otentikasi, aktifkan ini
 
 app.use(errorHandler); // Pastikan middleware ini ada dan berfungsi
+
+const pool = new Pool({
+    connectionString: process.env.POSTGRES_URL,
+  })
 
 // Menjalankan server
 app.listen(PORT, () => {
