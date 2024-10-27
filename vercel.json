@@ -11,11 +11,5 @@
             "src": "/(.*)",
             "dest":"/"
         }
-    ],
-    "hooks": {
-        "build": {
-            "command": "npm run build"
-        }
-
-    }
+    ]
 }
