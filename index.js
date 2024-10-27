@@ -7,7 +7,6 @@ const { Pool } = require('pg');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
 
 // Middleware
 app.use(cors());
@@ -35,6 +34,6 @@ const pool = new Pool({
     }
   })
 // Menjalankan server
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server berjalan di http://localhost:${PORT}`);
 });
